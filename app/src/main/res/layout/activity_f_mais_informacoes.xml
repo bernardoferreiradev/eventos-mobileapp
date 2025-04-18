@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageViewBackground"
+        android:layout_width="1100dp"
+        android:layout_height="1100dp"
+        android:src="@drawable/ewf"
+        android:scaleType="centerCrop"
+        android:alpha="0.1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="300dp"
+        android:rotation="0"
+        android:translationX="50dp"
+        android:translationY="0dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="60dp"
+            app:srcCompat="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="348dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Tipos de Parceria"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView555"
+            android:layout_width="364dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:text="Parceria Básica - 500€"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView222323"
+            android:layout_width="358dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Inclui divulgação básica e suporte limitado."
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView552323235"
+            android:layout_width="358dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Parceria Intermédia - 700€"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView232322"
+            android:layout_width="358dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Inclui divulgação intermediária e suporte estendido."
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView5232355"
+            android:layout_width="359dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Parceria Premium - 1000€"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="358dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Inclui divulgação premium, suporte dedicado e benefícios adicionais."
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/buttonVoltar"
+            android:layout_width="233dp"
+            android:layout_height="61dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="@color/black"
+            android:radius="12dp"
+            android:text="Voltar"
+            android:onClick="VoltarValorParceria"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

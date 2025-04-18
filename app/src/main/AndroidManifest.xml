@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.eventospt">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.EventosPT"
+        tools:targetApi="31">
+        <activity
+            android:name=".DepoisDoLogin.Fornecedor.EventoDetalhes"
+            android:exported="false" />
+        <activity
+            android:name=".DepoisDoLogin.Fornecedor.FornecedorEventos"
+            android:exported="false" />
+        <activity
+            android:name=".DepoisDoLogin.Fornecedor.FornecedorPedidosEventos"
+            android:exported="false" />
+        <activity
+            android:name=".DepoisDoLogin.Fornecedor.FornecedorPerfil"
+            android:exported="false" />
+        <activity
+            android:name=".DepoisDoLogin.GestorOuAdmin.VerCandidatos"
+            android:exported="false" />
+        <activity
+            android:name=".DepoisDoLogin.GestorOuAdmin.DetalhesFornecedor"
+            android:exported="false" />
+        <activity
+            android:name=".DepoisDoLogin.GestorOuAdmin.VerFornecedoresTodos"
+            android:exported="false" />
+        <activity
+            android:name=".DepoisDoLogin.GestorOuAdmin.VerUtilizadores"
+            android:exported="false" />
+        <activity
+            android:name=".DepoisDoLogin.Utilizador.Pesquisar"
+            android:exported="false" />
+        <activity
+            android:name=".DepoisDoLogin.Utilizador.When2MeetDetalhesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DepoisDoLogin.Utilizador.ListaWhen2MeetCriados"
+            android:exported="false" />
+        <activity
+            android:name=".DepoisDoLogin.Utilizador.ListaEventosCriadosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DepoisDoLogin.Utilizador.EventoDetalhesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DepoisDoLogin.Utilizador.When2MeetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DepoisDoLogin.Utilizador.CriarEventoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DepoisDoLogin.Utilizador.EscolhaCategoriaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DepoisDoLogin.Utilizador.FavoritosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DepoisDoLogin.Utilizador.GoogleMapsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DepoisDoLogin.Utilizador.DetalhesServicoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DepoisDoLogin.Utilizador.TodasAsCidades"
+            android:exported="false" />
+        <activity
+            android:name=".DepoisDoLogin.Fornecedor.InicioFornecedor"
+            android:exported="false" />
+        <activity
+            android:name=".DepoisDoLogin.Utilizador.Visitas"
+            android:exported="false" />
+        <activity
+            android:name=".DepoisDoLogin.Utilizador.PerfilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DepoisDoLogin.GestorOuAdmin.PainelAdmin"
+            android:exported="false" />
+        <activity
+            android:name=".DepoisDoLogin.Utilizador.Inicio"
+            android:exported="false" />
+        <activity
+            android:name=".DepoisDoLogin.Fornecedor.DLFActivity"
+            android:exported="false" />
+        <activity
+            android:name=".criar_conta_fornecedor.MaisInformacoesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".publico.PedidoEnviado"
+            android:exported="false" />
+        <activity
+            android:name=".criar_conta_fornecedor.ValorParceria"
+            android:exported="false" />
+        <activity
+            android:name=".criar_conta_fornecedor.OrcamentoServico"
+            android:exported="false" />
+        <activity
+            android:name=".helpers.verificarEmailExistenteFornecedoresEUtilizadores"
+            android:exported="false"
+            android:label="@string/title_activity_verificar_email_existente_fornecedores_eutilizadores"
+            android:theme="@style/Theme.EventosPT" />
+        <activity
+            android:name=".criar_conta_fornecedor.TipoDeServico"
+            android:exported="false" />
+        <activity
+            android:name=".criar_conta_fornecedor.LocalizacaoFornecedor"
+            android:exported="false" />
+        <activity
+            android:name=".criar_conta_fornecedor.DescricaoFornecedor"
+            android:exported="false" />
+        <activity
+            android:name=".publico.Criar_Conta_Sucesso"
+            android:exported="false" />
+        <activity
+            android:name=".criar_conta_fornecedor.AcercaDoFornecedor"
+            android:exported="false" />
+        <activity
+            android:name=".criar_conta_fornecedor.EmailFornecedor"
+            android:exported="false" />
+        <activity
+            android:name=".criar_conta_utilizador.Nome_DataNasc_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".criar_conta_utilizador.SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".publico.Login"
+            android:exported="false" />
+        <activity
+            android:name=".publico.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${GOOGLE_API_KEY}" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

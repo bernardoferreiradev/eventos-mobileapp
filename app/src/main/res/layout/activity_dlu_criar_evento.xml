@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:background="#F4F4F4"
+    android:layout_height="match_parent"
+    tools:context=".DepoisDoLogin.Utilizador.CriarEventoActivity">
+
+    <!-- ScrollView para permitir rolagem -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="0dp">
+
+            <!-- Caixa preta no topo -->
+            <FrameLayout
+                android:id="@+id/top_black_square"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@android:color/black"
+                android:layout_marginBottom="16dp">
+
+                <!-- Ícones dentro do FrameLayout -->
+                <ImageView
+                    android:id="@+id/center_icon"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="top|center"
+                    android:layout_marginTop="40dp"
+                    android:src="@drawable/logo" />
+
+                <ImageView
+                    android:id="@+id/second_icon"
+                    android:layout_width="30dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="60dp"
+                    android:src="@drawable/arrow_back" />
+            </FrameLayout>
+
+            <!-- Texto de introdução -->
+            <TextView
+                android:id="@+id/texto_indeciso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Indeciso entre datas?"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal" />
+
+            <!-- Texto explicativo da ferramenta -->
+
+            <!-- Botão para criar o formulário -->
+            <TextView
+                android:id="@+id/texto_ferramenta"
+                android:layout_width="379dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center_horizontal"
+                android:padding="10dp"
+                android:text="A nossa ferramenta permite criar um questionário onde os convidados indicam as datas mais convenientes para eles. Com isto, poderá identificar facilmente o dia com o maior número de participantes."
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="italic" />
+
+            <!-- Linha divisória -->
+            <Button
+                android:id="@+id/buttonwhen2meet"
+                android:layout_width="210dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="-15dp"
+                android:backgroundTint="@color/black"
+                android:text="Criar Sondagem"
+                android:textColor="@color/white" />
+
+            <View
+                android:id="@+id/linha_divisoria"
+                android:layout_width="380dp"
+                android:layout_gravity="center"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="#D3D3D3" />
+
+            <!-- Título "Criar o Meu Evento" -->
+            <TextView
+                android:id="@+id/titulo_evento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Criar O Meu Evento"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal" />
+
+            <!-- Campo para inserir o nome do evento -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nome do Evento"
+                android:textStyle="bold"
+                android:layout_marginLeft="22dp"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:layout_marginTop="25dp" />
+
+            <EditText
+                android:id="@+id/edit_nome_evento"
+                android:layout_width="355dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="22dp"
+                android:hint="Nome do Evento"
+                android:padding="10dp"
+                android:textColor="#000000"
+                android:layout_marginTop="5dp" />
+
+            <!-- Campo para inserir a data do evento -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="25dp"
+                android:text="Data do Evento"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edit_data_evento"
+                android:layout_marginLeft="22dp"
+                android:layout_width="355dp"
+                android:layout_height="wrap_content"
+                android:hint="Data do Evento (DD/MM/AAAA)"
+                android:padding="10dp"
+                android:textColor="#000000"
+                android:layout_marginTop="5dp" />
+
+            <!-- Spinner para tipo de evento -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="22dp"
+                android:layout_height="wrap_content"
+                android:text="Tipo de Evento"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:layout_marginTop="25dp" />
+
+            <Spinner
+                android:id="@+id/spinner_tipo_evento"
+                android:layout_width="355dp"
+                android:layout_marginLeft="22dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp" />
+
+            <!-- Inputs lado a lado para hora de início e hora de fim -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="22dp"
+                android:text="Horário do Evento"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:layout_marginTop="25dp" />
+
+            <LinearLayout
+                android:layout_width="355dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center">
+
+                <EditText
+                    android:id="@+id/edit_hora_inicio"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Hora Início"
+                    android:padding="10dp"
+                    android:textColor="#000000" />
+
+                <EditText
+                    android:id="@+id/edit_hora_fim"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Hora Fim"
+                    android:padding="10dp"
+                    android:textColor="#000000" />
+            </LinearLayout>
+
+            <!-- Campos para fornecedores -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="22dp"
+                android:text="Fornecedores"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:layout_marginTop="25dp" />
+
+            <EditText
+                android:id="@+id/edit_fornecedor1"
+                android:layout_width="355dp"
+                android:layout_height="wrap_content"
+                android:hint="Fornecedor 1"
+                android:padding="10dp"
+                android:layout_marginLeft="22dp"
+                android:textColor="#000000"
+                android:layout_marginTop="5dp" />
+
+            <EditText
+                android:id="@+id/edit_fornecedor2"
+                android:layout_width="355dp"
+                android:layout_height="wrap_content"
+                android:hint="Fornecedor 2"
+                android:padding="10dp"
+                android:textColor="#000000"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="5dp" />
+
+            <EditText
+                android:id="@+id/edit_fornecedor3"
+                android:layout_width="355dp"
+                android:layout_height="wrap_content"
+                android:hint="Fornecedor 3"
+                android:layout_marginLeft="22dp"
+                android:padding="10dp"
+                android:textColor="#000000"
+                android:layout_marginTop="5dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_gravity="center"
+                android:text="Número de Participantes"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:layout_marginTop="25dp" />
+
+            <!-- LinearLayout para os botões + e - e o número de participantes -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="5dp">
+
+                <!-- Botão de decremento (-) -->
+                <Button
+                    android:id="@+id/button_minus"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:text="-"
+                    android:textSize="18sp"
+                    android:layout_marginEnd="10dp"
+                    android:backgroundTint="@android:color/darker_gray"
+                    android:textColor="@android:color/white" />
+
+                <!-- Exibição do número de participantes -->
+                <TextView
+                    android:id="@+id/num_participantes"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:textColor="#000000" />
+
+                <!-- Botão de incremento (+)  -->
+                <Button
+                    android:id="@+id/button_plus"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:text="+"
+                    android:textSize="18sp"
+                    android:layout_marginStart="10dp"
+                    android:backgroundTint="@android:color/darker_gray"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/buttoncriarevento"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="100dp"
+                android:backgroundTint="@color/black"
+                android:text="Criar Evento"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

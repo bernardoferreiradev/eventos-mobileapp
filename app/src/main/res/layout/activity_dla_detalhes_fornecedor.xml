@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DepoisDoLogin.Utilizador.DetalhesServicoActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- HEADER COM IMAGEM -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/headerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="400dp">
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/porto2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+                <ImageView
+                    android:id="@+id/Voltar"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="48dp"
+                    android:contentDescription="Voltar"
+                    android:background="@drawable/round_gray_background"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/arrow_back" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- CONTEÚDO -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_detalhes_servicos1"
+                android:layout_marginTop="-50dp"
+                android:padding="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- TÍTULO -->
+                    <TextView
+                        android:id="@+id/NomeServico"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Título do Serviço"
+                        android:textAlignment="center"
+                        android:textColor="@color/verde_app"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:paddingBottom="16dp" />
+
+                    <!-- ENDEREÇO -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:paddingVertical="8dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            app:srcCompat="@drawable/location" />
+
+                        <TextView
+                            android:id="@+id/EnderecoF"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="Endereço"
+                            android:textColor="@color/verde_app"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:paddingVertical="8dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            app:srcCompat="@drawable/email" />
+
+                        <TextView
+                            android:id="@+id/textViewEmail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="Email"
+                            android:textColor="@color/verde_app"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <!-- CONTACTO -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:paddingVertical="8dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            app:srcCompat="@drawable/contacto" />
+
+                        <TextView
+                            android:id="@+id/textViewContacto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="Contacto"
+                            android:textColor="@color/verde_app"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+
+                    <!-- PARCERIA -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:paddingVertical="8dp">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            app:srcCompat="@drawable/handshake" />
+
+                        <TextView
+                            android:id="@+id/textViewParceria"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="Parceria"
+                            android:textColor="@color/verde_app"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <!-- STATUS -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:paddingVertical="8dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            app:srcCompat="@drawable/baseline_question_mark_24" />
+
+                        <TextView
+                            android:id="@+id/textViewStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="Status"
+                            android:textColor="@color/verde_app"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <!-- DATA -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:paddingVertical="8dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            app:srcCompat="@drawable/calendar_color" />
+
+                        <TextView
+                            android:id="@+id/textViewData"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="Data de Candidatura"
+                            android:textColor="@color/verde_app"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+
+                    <!-- INFORMAÇÕES PRINCIPAIS -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:background="@drawable/background_cinza_detalhes_servicos"
+                        android:padding="16dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <!-- Preço Mínimo -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                app:srcCompat="@drawable/preco" />
+
+                            <TextView
+                                android:id="@+id/PrecoMin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="- min"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:paddingTop="4dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Preço Mínimo"
+                                android:textColor="@color/verde_app"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <!-- Preço Máximo -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                app:srcCompat="@drawable/preco" />
+
+                            <TextView
+                                android:id="@+id/PrecoMax"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="- max"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:paddingTop="4dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Preço Máximo"
+                                android:textColor="@color/verde_app"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <!-- Distrito -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                app:srcCompat="@drawable/distrito" />
+
+                            <TextView
+                                android:id="@+id/DistritoText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="- distrito"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:paddingTop="4dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Distrito"
+                                android:textColor="@color/verde_app"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- DESCRIÇÃO -->
+                    <TextView
+                        android:id="@+id/textViewDescricao"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        android:text="Descrição"
+                        android:textAlignment="center"
+                        android:textColor="@color/verde_app"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/DescricaoF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="24dp"
+                        android:text="Esta é a descrição do serviço, com todos os detalhes relevantes sobre o mesmo."
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <Button
+                        android:id="@+id/buttonApagar"
+                        android:layout_width="233dp"
+                        android:layout_height="61dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="0dp"
+                        android:backgroundTint="#950000"
+                        android:radius="12dp"
+                        android:text="Apagar Fornecedor"
+                        android:textColor="@color/white" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:padding="16dp">
+
+                        <Button
+                            android:id="@+id/buttonAceitar"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Aceitar"
+                            android:backgroundTint="@android:color/holo_green_dark"
+                            android:textColor="@android:color/white"
+                            android:visibility="gone" />
+
+                        <Button
+                            android:id="@+id/buttonRejeitar"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Rejeitar"
+                            android:backgroundTint="@android:color/holo_red_dark"
+                            android:textColor="@android:color/white"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

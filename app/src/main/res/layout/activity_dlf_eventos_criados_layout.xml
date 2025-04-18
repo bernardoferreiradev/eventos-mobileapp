@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/TipoEvento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="12sp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_toEndOf="@id/imageView"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/TituloEvento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/TipoEvento"
+            android:layout_toEndOf="@id/imageView"
+            android:layout_marginStart="8dp" />
+
+        <TextView
+            android:id="@+id/DataEvento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="14sp"
+            android:textColor="@android:color/black"
+            android:layout_below="@id/TituloEvento"
+            android:layout_toEndOf="@id/imageView"
+            android:layout_marginStart="8dp" />
+
+        <TextView
+            android:id="@+id/textView29"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/imageView"
+            android:layout_alignBottom="@id/imageView"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="28dp"
+            android:background="@drawable/light_green_bg"
+            android:gravity="center"
+            android:text="Evento Futuro"
+            android:textColor="@color/verde_app"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

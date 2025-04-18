@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DepoisDoLogin.Utilizador.When2MeetActivity">
+
+    <!-- ScrollView para permitir rolagem -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".DepoisDoLogin.Utilizador.Inicio"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- FrameLayout para o topo preto -->
+            <FrameLayout
+                android:id="@+id/top_black_square"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:background="@android:color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/center_icon"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="top|center"
+                    android:layout_marginTop="40dp"
+                    android:src="@drawable/logo" />
+
+                <ImageView
+                    android:id="@+id/second_icon"
+                    android:layout_width="30dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="60dp"
+                    android:src="@drawable/arrow_back" />
+
+                <!-- Título no topo -->
+                <TextView
+                    android:id="@+id/titulo_topo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="70dp"
+                    android:text="Selecione as Datas"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </FrameLayout>
+
+            <!-- Texto explicativo sobre a seleção das datas -->
+            <TextView
+                android:id="@+id/texto_explicativo"
+                android:layout_width="340dp"
+                android:layout_height="39dp"
+                android:layout_marginTop="20dp"
+                android:text="Escolha 3 datas para o seu evento no formato (dd/mm/yyyy)."
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/top_black_square" />
+
+            <!-- Título para o campo "Nome do Evento" -->
+
+            <!-- Campo para o Nome do Evento -->
+            <TextView
+                android:id="@+id/titulo_nome_evento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                android:textStyle="bold"
+                android:text="Nome do Evento"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/texto_explicativo" />
+
+            <EditText
+                android:id="@+id/edit_nome"
+                android:layout_width="370dp"
+                android:layout_height="wrap_content"
+                android:hint="Nome do Evento"
+                android:textColor="#000000"
+                android:padding="10dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toBottomOf="@id/titulo_nome_evento"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Título para as Datas -->
+
+            <!-- LinearLayout para alinhar os 3 campos de datas horizontalmente -->
+            <TextView
+                android:id="@+id/titulo_datas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                android:text="Datas do Evento"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edit_nome" />
+
+            <LinearLayout
+                android:id="@+id/datas_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/titulo_datas">
+
+                <!-- Campo para Data 1 -->
+                <EditText
+                    android:id="@+id/edit_data_1"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Data 1 (dd/mm/yyyy)"
+                    android:textColor="#000000"
+                    android:padding="10dp"
+                    android:layout_marginEnd="10dp"/>
+
+                <!-- Campo para Data 2 -->
+                <EditText
+                    android:id="@+id/edit_data_2"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Data 2 (dd/mm/yyyy)"
+                    android:textColor="#000000"
+                    android:padding="10dp"
+                    android:layout_marginEnd="10dp"/>
+
+                <!-- Campo para Data 3 -->
+                <EditText
+                    android:id="@+id/edit_data_3"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Data 3 (dd/mm/yyyy)"
+                    android:textColor="#000000"
+                    android:padding="10dp"
+                    android:layout_marginEnd="10dp"/>
+            </LinearLayout>
+
+            <!-- Título para Hora de Início -->
+
+            <!-- Campo para inserir a hora de início -->
+            <TextView
+                android:id="@+id/titulo_hora_inicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:text="Hora de Início"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/datas_container" />
+
+            <EditText
+                android:id="@+id/edit_hora_inicio"
+                android:layout_width="370dp"
+                android:layout_height="wrap_content"
+                android:hint="Hora de Início (hh:mm)"
+                android:inputType="time"
+                android:textColor="#000000"
+                android:padding="10dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toBottomOf="@id/titulo_hora_inicio"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <!-- Título para Hora de Fim -->
+
+            <!-- Campo para inserir a hora final -->
+            <TextView
+                android:id="@+id/titulo_hora_fim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:text="Hora de Fim"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edit_hora_inicio" />
+
+            <EditText
+                android:id="@+id/edit_hora_fim"
+                android:layout_width="370dp"
+                android:layout_height="wrap_content"
+                android:hint="Hora de Fim (hh:mm)"
+                android:inputType="time"
+                android:textColor="#000000"
+                android:padding="10dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toBottomOf="@id/titulo_hora_fim"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <!-- Botão para confirmar a seleção -->
+            <Button
+                android:id="@+id/button_confirmar_datas"
+                android:layout_width="210dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/black"
+                android:text="Confirmar Datas"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edit_hora_fim"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

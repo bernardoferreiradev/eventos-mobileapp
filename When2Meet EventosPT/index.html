@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>When2Meet - EventosPT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #dff6ff, #e0f7ea);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      background: #ffffff;
+      padding: 60px;
+      border-radius: 24px;
+      max-width: 480px;
+      width: 100%;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      animation: fadeSlideIn 0.8s ease;
+    }
+
+    .logo {
+      max-width: 80px;
+      animation: bounceIn 0.6s ease;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #2c3e50;
+      text-align: center;
+      margin: 0;
+      animation: fadeIn 1s ease;
+    }
+
+    p {
+      font-size: 16px;
+      color: #555;
+      text-align: center;
+      margin: 0;
+      animation: fadeIn 1.2s ease;
+    }
+
+    .input-group {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      animation: fadeIn 1.4s ease;
+    }
+
+    .input-group label {
+      font-size: 14px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .input-group input {
+      padding: 14px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background: #f9f9f9;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background-color: #1b867c;
+      color: white;
+      font-weight: 600;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      animation: bounceIn 0.6s ease 1.2s forwards;
+      opacity: 0;
+    }
+
+    button:hover {
+      background-color: #14695f;
+      transform: translateY(-1px);
+    }
+
+    @keyframes fadeSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      60% { transform: scale(1.05); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+
+ 
+
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+
+    // Nova regex: alfanumérico + _ + entre 5 e 25 caracteres
+    const formularioRegex = /^[a-zA-Z0-9_-]{5,25}$/;
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("submeter").onclick = function () {
+        let idFormulario = document.getElementById("formulario").value.trim();
+
+        if (!formularioRegex.test(idFormulario)) {
+          alert("ID inválido. Deve conter entre 5 e 25 caracteres alfanuméricos (pode incluir _ e -).");
+          return;
+        }
+
+        get(ref(database, "whentomeet/" + idFormulario)).then(snapshot => {
+          if (snapshot.exists()) {
+            window.location.href = "voto.html?id=" + idFormulario;
+          } else {
+            alert("ID não encontrado.");
+          }
+        });
+      };
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <img src="icon.png" alt="Logo" class="logo" />
+    <h1>When2Meet da EventosPT</h1>
+    <p>Introduz o ID do formulário para continuar</p>
+    <div class="input-group">
+      <label for="formulario">ID do Formulário</label>
+      <input type="text" id="formulario" placeholder="Ex: A76TGD7gd97" />
+    </div>
+    <button id="submeter">Submeter</button>
+  </div>
+</body>
+</html>

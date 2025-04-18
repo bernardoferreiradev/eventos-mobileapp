@@ -1,0 +1,66 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="Início"
+            android:icon="@drawable/baseline_home_24"
+            android:padding="10dp" />
+
+        <item
+            android:id="@+id/nav_notifications"
+            android:title="Notificações"
+            android:icon="@drawable/baseline_notifications_24"
+            android:padding="30dp" />
+
+        <item
+            android:id="@+id/nav_mapa"
+            android:title="Mapa"
+            android:icon="@drawable/ic_pin"
+            android:padding="30dp" />
+    </group>
+
+    <item
+        android:id="@+id/nav_perfil"
+        android:title="Perfil"
+        android:icon="@drawable/baseline_account_circle_24">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_profile"
+                    android:title="Perfil"
+                    android:icon="@drawable/baseline_account_circle_24"
+                    android:padding="10dp" />
+
+                <item
+                    android:id="@+id/nav_whentomeet"
+                    android:title="Os Meus When2Meet"
+                    android:icon="@drawable/baseline_question_mark_24"
+                    android:padding="10dp" />
+
+                <item
+                    android:id="@+id/nav_os_meus_eventos"
+                    android:title="Os Meus Eventos"
+                    android:icon="@drawable/baseline_calendar_month_24"
+                    android:padding="10dp" />
+
+                <item
+                    android:id="@+id/nav_favoritos"
+                    android:title="Os Meus Favoritos"
+                    android:icon="@drawable/baseline_bookmark_24"
+                    android:padding="10dp" />
+
+                <item
+                    android:id="@+id/nav_logout"
+                    android:title="Logout"
+                    android:icon="@drawable/baseline_logout_24"
+                    android:padding="10dp" />
+            </group>
+        </menu>
+    </item>
+
+
+
+</menu>

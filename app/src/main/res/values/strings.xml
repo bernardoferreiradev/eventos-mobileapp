@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">EventosPT</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_verificar_email_existente_fornecedores_eutilizadores">
+        verificarEmailExistenteFornecedoresEUtilizadores
+    </string>
+    <string name="introTitle">Bem-vindo!</string>
+    <string name="Acerca_da_EventosPT_Descricao">
+    A EventosPT é a aplicação ideal para encontrar os melhores serviços para eventos em Portugal. \n\n A mesma conecta-o com fornecedores de qualidade e confiáveis para as suas diversas necessidades. \n\n Para além das nossas sugestões, é permitido ao utilizador pesquisar pelas suas preferências, localização, serviços, etc. \n\n Os utilizadores podem avaliar fornecedores, o que para um ecossistema onde é possível expressar opiniões e ajudar futuros clientes a tomar decisões.\n\n Confie em nós e crie eventos INESQUECÍVEIS! \n
+</string>
+</resources>

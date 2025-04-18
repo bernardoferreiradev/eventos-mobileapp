@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Votação do Evento</title>
+  <link rel="icon" href="icon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #dff6ff, #e0f7ea);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      max-width: 500px;
+      width: 90%;
+      background: #ffffff;
+      padding: 60px;
+      border-radius: 28px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      text-align: center;
+      animation: fadeInUp 0.8s ease;
+      position: relative;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .logo-img {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto;
+      border-radius: 50%;
+      background-color: #eaf8f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      animation: pulse 1.8s infinite ease-in-out;
+    }
+
+    .logo-img img {
+      width: 36px;
+      height: 36px;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 600;
+      color: #1b867c;
+      margin: 0;
+    }
+
+    p {
+      font-size: 16px;
+      color: #555;
+      margin: 0;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+
+    p:nth-of-type(1) { animation-delay: 0.4s; }
+    p:nth-of-type(2) { animation-delay: 0.6s; }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      text-align: left;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+      animation-delay: 0.8s;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    .input-group label {
+      font-size: 14px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    select {
+      padding: 14px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      font-size: 16px;
+      background: #fafafa;
+      color: #333;
+      transition: all 0.3s ease;
+      animation: fadeIn 1.2s ease forwards;
+    }
+
+    select:hover {
+      border-color: #1b867c;
+      background-color: #f0fdfa;
+    }
+
+    button {
+      padding: 14px;
+      background-color: #1b867c;
+      color: white;
+      font-weight: 600;
+      font-size: 16px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      animation: bounceIn 0.6s ease-in-out 1.2s forwards;
+      opacity: 0;
+    }
+
+    @keyframes bounceIn {
+  	0% { transform: scale(0.8); opacity: 0; }
+  	60% { transform: scale(1.05); opacity: 1; }
+  	100% { transform: scale(1); opacity: 1; }
+	}
+
+    button:hover {
+      background-color: #14695f;
+      transform: translateY(-2px);
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    .toast {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #1b867c;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .toast.show {
+      opacity: 1;
+      pointer-events: auto;
+      animation: slideUp 0.3s ease;
+    }
+
+    @keyframes slideUp {
+      from { transform: translate(-50%, 20px); opacity: 0; }
+      to { transform: translate(-50%, 0); opacity: 1; }
+    }
+  </style>
+
+  
+
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const urlParams = new URLSearchParams(window.location.search);
+    const eventoId = urlParams.get("id");
+
+    document.addEventListener("DOMContentLoaded", () => {
+      carregarDetalhesEvento();
+      document.getElementById("votar").onclick = votar;
+    });
+
+    function carregarDetalhesEvento() {
+      get(ref(database, `whentomeet/${eventoId}`)).then(snapshot => {
+        if (snapshot.exists()) {
+          const evento = snapshot.val();
+          document.getElementById("nomeEvento").textContent = evento.nome;
+          document.getElementById("horaInicio").textContent = evento.horaInicio;
+          document.getElementById("horaFim").textContent = evento.horaFim;
+
+          const select = document.getElementById("datas");
+          select.innerHTML = "";
+
+          ["data1", "data2", "data3"].forEach(key => {
+            if (evento[key]) {
+              let option = document.createElement("option");
+              option.value = key;
+              option.textContent = `${evento[key]} (Votos: ${evento[key + "_votos"] || 0})`;
+              select.appendChild(option);
+            }
+          });
+        }
+      });
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.add("show");
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2000);
+    }
+
+    function votar() {
+      const dataEscolhida = document.getElementById("datas").value;
+      if (!dataEscolhida) return;
+
+      const dataVotosRef = ref(database, `whentomeet/${eventoId}/${dataEscolhida}_votos`);
+      get(dataVotosRef).then(snapshot => {
+        let totalVotos = snapshot.exists() ? snapshot.val() + 1 : 1;
+        update(ref(database, `whentomeet/${eventoId}`), { [`${dataEscolhida}_votos`]: totalVotos }).then(() => {
+          showToast("✅ Voto registado com sucesso!");
+          setTimeout(() => {
+            window.location.href = "index.html";
+          }, 2000);
+        });
+      });
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="logo-img"><img src="icon.png" alt="Logo" /></div>
+    <h1>Votação do Evento</h1>
+    <p><strong>Evento:</strong> <span id="nomeEvento"></span></p>
+    <p><strong>Horário:</strong> <span id="horaInicio"></span> - <span id="horaFim"></span></p>
+    <div class="input-group">
+      <label for="datas">Escolhe uma data:</label>
+      <select id="datas"></select>
+    </div>
+    <button id="votar">Votar</button>
+    <div id="toast" class="toast"></div>
+  </div>
+</body>
+</html>
