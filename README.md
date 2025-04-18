@@ -1,6 +1,6 @@
-# 📱 **App Eventos PT**
+# 📱 **App Eventos**
 
-**App Eventos PT** é uma plataforma móvel inovadora que visa agilizar a pesquisa, organização e avaliação de fornecedores de serviços para eventos. Este projeto visa melhorar a eficiência dos processos envolvidos na gestão de eventos, proporcionando uma interface prática e intuitiva para os organizadores.
+**App Eventos** é uma plataforma móvel inovadora que visa agilizar a pesquisa, organização e avaliação de fornecedores de serviços para eventos. Este projeto visa melhorar a eficiência dos processos envolvidos na gestão de eventos, proporcionando uma interface prática e intuitiva para os organizadores.
 
 
 
@@ -26,7 +26,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 🚀 **Objetivo do Projeto**
 
-O principal objetivo da **App Eventos PT** é proporcionar uma plataforma digital integrada que automatize a pesquisa e a gestão de fornecedores para eventos. A aplicação permite que organizadores encontrem e escolham serviços de forma rápida e eficaz, simplificando o processo de seleção e negociação com fornecedores.
+O principal objetivo da **App Eventos** é proporcionar uma plataforma digital integrada que automatize a pesquisa e a gestão de fornecedores para eventos. A aplicação permite que organizadores encontrem e escolham serviços de forma rápida e eficaz, simplificando o processo de seleção e negociação com fornecedores.
 
 
 
@@ -69,7 +69,7 @@ Atualmente, a aplicação pode ser instalada de duas formas:
 
 ## 🔒 **Segurança e Privacidade**
 
-A plataforma utiliza a **Firebase** para a autenticação de utilizadores e o armazenamento seguro de dados.
+As chaves das API's e base de dados utilizadas foram todas removidas. Para conseguir testar a app terá de ter acesso à .apk
 
 
 
